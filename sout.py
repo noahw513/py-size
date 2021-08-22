@@ -39,14 +39,14 @@ def sizer(iterable):
 
 # Make things easy for the user
 def human_readable(int):
-    if int < 1000:
+    if int < 1024:
         return "%i" % int + " Bytes"
-    elif 1000 <= int <= 1000000:
-        return "%.1f" % float(int/1000) + " Kilobytes"
-    elif 1000000 <= int <= 1000000000:
-        return "%.1f" % float(int/1000000) + " Megabytes"
-    elif 1000000000 <= int:
-        return "%.1f" % float(int/1000000000) + " Gigabytes"
+    elif 1024 <= int <= 1048576:
+        return "%.1f" % float(int/1024) + " Kilobytes"
+    elif 1048576 <= int <= 1073741824:
+        return "%.1f" % float(int/1048576) + " Megabytes"
+    elif 1073741824 <= int:
+        return "%.1f" % float(int/1073741824) + " Gigabytes"
 
 # Request & save directory to size from user
 dir_str = req_dir()
